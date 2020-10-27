@@ -3,10 +3,36 @@
 To install Swift for TensorFlow, download one of the packages below and follow the instructions for your operating system. After installation, you can use the full suite of Swift tools, including `swift` (Swift REPL/interpreter) and `swiftc` (Swift compiler). See [here](Usage.md) for more details about using Swift for TensorFlow.
 
 **Note:**
+- As a shortcut, see the [GCP section](#google-cloud-platform) for instructions
+  on using a [Deep Learning VM image][dlvm] to spin up a pre-configured
+  environment.
 - If you want to modify the Swift for TensorFlow source code or build with a custom version of TensorFlow, see [here](https://github.com/apple/swift/blob/tensorflow/README.md) for instructions on building from source.
 - Swift for TensorFlow is an early stage project. It has been released to enable open source development and is not yet ready for general use by machine learning developers.
 
 ## Releases
+
+[Release notes for v0.11.0](https://docs.google.com/document/d/1aTP88ANmJoxpxHeMIdz7CskqSuDHIg3mVELjm0iBXXQ/edit?usp=sharing)
+
+| Download | Version | Date |
+|----------|---------|------|
+| [Xcode 12](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.11/rc2/swift-tensorflow-RELEASE-0.11-osx.pkg) | v0.11 | August 11, 2020 |
+| [Ubuntu 20.04 (CPU Only)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.11/rc2/swift-tensorflow-RELEASE-0.11-ubuntu20.04.tar.gz) | v0.11 | August 11, 2020 |
+| [Ubuntu 18.04 (CPU Only)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.11/rc2/swift-tensorflow-RELEASE-0.11-ubuntu18.04.tar.gz) | v0.11 | August 11, 2020  |
+| [Ubuntu 18.04 (CUDA 10.2)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.11/rc2/swift-tensorflow-RELEASE-0.11-cuda10.2-cudnn7-ubuntu18.04.tar.gz) | v0.11 | August 11, 2020  |
+| [Ubuntu 18.04 (CUDA 10.1)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.11/rc2/swift-tensorflow-RELEASE-0.11-cuda10.1-cudnn7-ubuntu18.04.tar.gz) | v0.11 | August 11, 2020 |
+
+<details>
+  <summary>Older Packages</summary>
+
+[Release notes for v0.10.0](https://docs.google.com/document/d/1_EeREdz8jZ44zGXY-5m2-1xcR9pOvMZf4kkHfUgNjD0/edit?usp=sharing)
+
+| Download | Version | Date |
+|----------|---------|------|
+| [Xcode 11](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/swift-tensorflow-RELEASE-0.10-osx.pkg) | v0.10 | June 16, 2020 |
+| [Ubuntu 18.04 (CPU Only)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/swift-tensorflow-RELEASE-0.10-ubuntu18.04.tar.gz) | v0.10 | June 16, 2020  |
+| [Ubuntu 18.04 (CUDA 10.2)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/swift-tensorflow-RELEASE-0.10-cuda10.2-cudnn7-ubuntu18.04.tar.gz) | v0.10 | June 16, 2020  |
+| [Ubuntu 18.04 (CUDA 10.1)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.10/rc1/swift-tensorflow-RELEASE-0.10-cuda10.1-cudnn7-ubuntu18.04.tar.gz) | v0.10 | June 16, 2020 |
+
 
 [Release notes for v0.9.0](https://docs.google.com/document/d/1Sk3F_owEF0wAo26xO1RTbdSbQV9eb5tMKQX3EgLeD1o/edit?usp=sharing)
 
@@ -16,10 +42,6 @@ To install Swift for TensorFlow, download one of the packages below and follow t
 | [Ubuntu 18.04 (CPU, TPU)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.9/rc1/swift-tensorflow-RELEASE-0.9-ubuntu18.04.tar.gz) | v0.9 | Apr 30, 2020  |
 | [Ubuntu 18.04 (CPU, CUDA 10.2, TPU)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.9/rc1/swift-tensorflow-RELEASE-0.9-cuda10.2-cudnn7-ubuntu18.04.tar.gz) | v0.9 | Apr 30, 2020  |
 | [Ubuntu 18.04 (CPU, CUDA 10.1, TPU)](https://storage.googleapis.com/swift-tensorflow-artifacts/releases/v0.9/rc1/swift-tensorflow-RELEASE-0.9-cuda10.1-cudnn7-ubuntu18.04.tar.gz) | v0.9 | Apr 30, 2020 |
-
-<details>
-  <summary>Older Packages</summary>
-
 
 [Release notes for v0.8.0](https://docs.google.com/document/d/1zjDwHBvIstW5Fp_08xM1VV24Dvt86ajC/edit#heading=h.2et92p0)
 
@@ -91,64 +113,42 @@ To install Swift for TensorFlow, download one of the packages below and follow t
 
 </details>
 
+**Note:** We cannot build Ubuntu 20.04 toolchains with CUDA support until
+[Ubuntu 20.04 Docker images with CUDNN](https://gitlab.com/nvidia/container-images/cuda/-/issues/83) are ready. In
+the meantime, you may be able to run Ubuntu 18.04 toolchains on Ubuntu 20.04 using the tips in
+[#512](https://github.com/tensorflow/swift/issues/512).
+
 ## Development Snapshots
 
 | Download |
 |----------|
-| [Xcode 11 (June 12, 2020)](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-06-12-a-osx.pkg) |
-| [Ubuntu 18.04 (CPU, TPU) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-ubuntu18.04.tar.gz) |
-| [Ubuntu 18.04 (CPU, CUDA 10.2, TPU) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-cuda10.2-cudnn7-ubuntu18.04.tar.gz) |
-| [Ubuntu 18.04 (CPU, CUDA 10.1, TPU) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-cuda10.1-cudnn7-ubuntu18.04.tar.gz) |
-| [Windows (April 15, 2020)](https://storage.googleapis.com/azure-pipelines-storage/Swift%20for%20TensorFlow/Windows/s4tf-windows-x64-30098-20200415.1.exe) |
+| [Xcode 12 (September 16, 2020)](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-09-16-a-osx.pkg) |
+| [Ubuntu 20.04 (CPU) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-ubuntu20.04.tar.gz) |
+| [Ubuntu 18.04 (CPU) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-ubuntu18.04.tar.gz) |
+| [Ubuntu 18.04 (CPU, CUDA 11.0) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-cuda11.0-cudnn8-ubuntu18.04.tar.gz) |
+| [Ubuntu 18.04 (CPU, CUDA 10.2) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-cuda10.2-cudnn7-ubuntu18.04.tar.gz) |
+| [Ubuntu 18.04 (CPU, CUDA 10.1) (Nightly)](https://storage.googleapis.com/swift-tensorflow-artifacts/nightlies/latest/swift-tensorflow-DEVELOPMENT-cuda10.1-cudnn7-ubuntu18.04.tar.gz) |
+| [Windows (June 23, 2020)](https://storage.googleapis.com/azure-pipelines-storage/Swift%20for%20TensorFlow/Windows/s4tf-windows-x64-34189-20200623.1.exe) |
 
 <details>
   <summary>Older Packages</summary>
 
 ### Xcode
 
-#### Xcode 11
+#### Xcode 12
 
 | Download |
 |----------|
-| [June 9, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-06-09-a-osx.pkg) |
-| [June 8, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-06-08-a-osx.pkg) |
-| [June 3, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-06-03-a-osx.pkg) |
-| [May 26, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-05-26-a-osx.pkg) |
-| [May 9, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-05-09-a-osx.pkg) |
-| [May 8, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-05-08-a-osx.pkg) |
-| [May 7, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-05-07-a-osx.pkg) |
-| [May 3, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-05-03-a-osx.pkg) |
-| [April 17, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-04-17-a-osx.pkg) |
-| [April 15, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-04-15-a-osx.pkg) |
-| [April 7, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-04-07-a-osx.pkg) |
-| [March 25, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-03-25-a-osx.pkg) |
-| [March 20, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-03-20-a-osx.pkg) |
-| [March 17, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-03-17-a-osx.pkg) |
-| [March 4, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-03-04-a-osx.pkg) |
-| [March 3, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-03-03-a-osx.pkg) |
-| [February 29, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-29-a-osx.pkg) |
-| [February 19, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-19-a-osx.pkg) |
-| [February 12, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-12-a-osx.pkg) |
-| [February 11, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-11-a-osx.pkg) |
-| [February 4, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-04-a-osx.pkg) |
-| [February 3, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-02-03-a-osx.pkg) |
-| [January 30, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-01-30-a-osx.pkg) |
-| [January 14, 2020](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2020-01-14-a-osx.pkg) |
-| [December 23, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-23-a-osx.pkg) |
-| [December 21, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-21-a-osx.pkg) |
-| [December 19, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-19-a-osx.pkg) |
-| [December 12, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-12-a-osx.pkg) |
-| [December 10, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-10-a-osx.pkg) |
-| [December 3, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-12-03-a-osx.pkg) |
-| [November 27, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-11-27-a-osx.pkg) |
-| [November 15, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-11-15-a-osx.pkg) |
-| [November 11, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-11-11-a-osx.pkg) |
-| [November 7, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-11-07-a-osx.pkg) |
-| [November 4, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-11-04-a-osx.pkg) |
-| [August 28, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-08-28-a-osx.pkg) |
-| [August 10, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-08-10-a-osx.pkg) |
-| [August 8, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-08-08-a-osx.pkg) |
-| [July 25, 2019](https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2019-07-25-a-osx.pkg) |
+| [September 3, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-09-03-a-osx.pkg) |
+| [August 26, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-08-26-a-osx.pkg) |
+| [August 19, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-08-19-a-osx.pkg) |
+| [August 18, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-08-18-a-osx.pkg) |
+| [August 13, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-08-13-a-osx.pkg) |
+| [August 5, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-08-05-a-osx.pkg) |
+| [July 29, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-07-29-a-osx.pkg) |
+| [July 16, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-07-16-a-osx.pkg) |
+| [July 11, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-07-11-a-osx.pkg) |
+| [July 2, 2020](https://storage.googleapis.com/swift-tensorflow-artifacts/macos-toolchains/swift-tensorflow-DEVELOPMENT-2020-07-02-a-osx.pkg) |
 
 </details>
 
@@ -163,7 +163,7 @@ To install Swift for TensorFlow, download one of the packages below and follow t
 ### Requirements
 
 * macOS 10.15 or later
-* Xcode 11 or later
+* Xcode 12 beta 2 or later
 
 ### Installation
 
@@ -297,6 +297,89 @@ copy "%SDKROOT%\usr\share\winsdk.modulemap" "%UniversalCRTSdkDir%\Include\%UCRTV
   <sup><a name="windows-python">6</a></sup> Provides `python` needed for Python integration. You may download it from [python](https://www.python.org/) instead.<br/>
   <sup><a name="windows-sdk-deploy">7</a></sup> This will need to be re-run every time Visual Studio is updated. <br/>
 
+# Google Cloud Platform
+
+***Experimental***
+
+To save on setup time, you can leverage one of the Swift for Tensorflow
+[Deep Learning VM][dlvm] images to quickly spin up a pre-configured Ubuntu
+instance with an installed toolchain. To view the available images (currently
+experimental):
+
+```
+gcloud compute images list \
+  --project deeplearning-platform-release \
+  --no-standard-images | \
+  grep swift
+```
+
+## CPU Instance
+
+To create a small CPU instance:
+
+```
+gcloud compute instances create s4tf-ubuntu \
+  --image-project=deeplearning-platform-release \
+  --image-family=swift-latest-cpu-ubuntu-1804 \
+  --maintenance-policy=TERMINATE \
+  --machine-type=n1-standard-2 \
+  --boot-disk-size=256GB
+```
+
+This will create a single `n1-standard-2` instance with the Swift
+toolchain installed. Once the instance is up, connect to it:
+
+```
+gcloud compute ssh s4tf-ubuntu \
+  --zone ${ZONE}
+```
+
+## GPU Instance
+
+To create a GPU instance, the first step is to identify a zone that contains
+the type of GPU you'd like to use, since not all zones have availability:
+
+```
+export GPU_TYPE="v100"
+gcloud compute accelerator-types list | grep ${GPU_TYPE}
+```
+
+Using these results, set your zone:
+
+```
+export ZONE="us-west1-b"
+```
+
+To create an instance with an attached V100 GPU:
+
+```
+gcloud compute instances create s4tf-ubuntu-${GPU_TYPE} \
+  --zone=${ZONE} \
+  --image-project=deeplearning-platform-release \
+  --image-family=swift-latest-gpu-ubuntu-1804 \
+  --maintenance-policy=TERMINATE \
+  --accelerator="type=nvidia-tesla-${GPU_TYPE},count=1" \
+  --metadata="install-nvidia-driver=True" \
+  --machine-type=n1-highmem-2 \
+  --boot-disk-size=256GB
+```
+
+This will create a single `n1-highmem-2` instance with an attached accelerator
+and the Swift toolchain installed with all CUDA libraries.
+
+***Note:*** *If this command fails due to lack of quota, you will need to find
+a zone with available quota or request an increase. Using the search feature in
+the [Quotas section of the GCP Console][gcp_quotas], you can view your current
+usage and submit an increase request (e.g. search for "V100" or the value you
+used in `$GPU_TYPE`).*
+
+Once the instance is up, connect to it:
+
+```
+gcloud compute ssh s4tf-ubuntu-${GPU_TYPE} \
+  --zone ${ZONE}
+```
+
 # Verify the Installation
 
 Create a text file `test.swift` with the following contents:
@@ -332,4 +415,5 @@ If you see this output, you have successfully installed Swift for TensorFlow!
  [6.0, 8.0]]
 ```
 
-
+[dlvm]: https://cloud.google.com/ai-platform/deep-learning-vm/docs
+[gcp_quotas]: https://console.cloud.google.com/iam-admin/quotas
